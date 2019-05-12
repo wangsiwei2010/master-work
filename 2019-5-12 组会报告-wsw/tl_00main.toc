@@ -1,0 +1,7 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {2}{多视图聚类简介}{3}{0}{1}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {3}{基于后期融合最大化的多视图聚类方法}{15}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {4}{总结}{24}{0}{3}

@@ -1,0 +1,140 @@
+\documentclass[UTF8,xcolor=table]{beamer}
+%\usepackage{fontspec}
+%\setsansfont{宋体}
+\usepackage[BoldFont,SlantFont]{xeCJK}
+\setCJKmainfont[BoldFont={Adobe Heiti Std},ItalicFont={Adobe Kaiti Std}]{SimSun}
+
+%\setCJKmainfont[BoldFont=STSong, ItalicFont=STKaiti]{STSong}
+%\setCJKsansfont[BoldFont=STHeiti]{STXihei}
+%\setCJKmonofont{STFangsong}
+
+\usepackage{latexsym,amssymb,amsmath,amsbsy,amsopn,amstext,xcolor,multicol}
+\usepackage{graphicx,wrapfig,fancybox}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{thubeamer}
+%\usepackage[backend=bibtex,style=IEEE,sorting=none]{biblatex} % [参考文献格式](https://www.sharelatex.com/blog/2013/07/31/getting-started-with-biblatex.html)
+\usepackage[backend=bibtex,sorting=none]{biblatex} % [参考文献格式](https://www.sharelatex.com/blog/2013/07/31/getting-started-with-biblatex.html) %mac IEEE not found
+\usepackage{array}
+\usepackage{bm}
+\usepackage{caption}
+\usepackage[caption=false,font=scriptsize]{subfig}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{tikzscale}
+\usepackage{animate}
+%\usepackage{times} %与上面的冲突，加上这个 粗体斜体就失效
+%\usepackage{mathptmx}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{textcomp}
+\usepackage{algorithm}
+\usepackage{epstopdf}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{amsthm}                                  % theorem package
+
+\usepackage{epsfig}
+\usepackage{ifpdf}
+\usepackage{graphicx}                                % some people may need to use [dvips] option
+\usepackage{amsmath,amsfonts,amssymb}                % better equation formatting
+\usepackage{cases}                                   % where "\begin{numcases}" comes from
+\usepackage{stmaryrd}                                % where "\shortrightarrow" comes from
+\usepackage{psfrag}
+\usepackage{placeins}                                % where "\FloatBarrier" comes from
+\usepackage{colortbl}                                % color table
+%\usepackage{subfigure}
+\usepackage{amsthm}                                  % theorem package
+\usepackage{multirow,booktabs}
+
+\defbibheading{bibliography}[\bibname]{} %avoid printbibliography 自动生成目录
+\addbibresource{ref/wogong.bib}
+%\setbeamertemplate{bibliography item}{\insertbiblabel} %将列表中默认的丑陋的icon 改成数字,或者下面这个也行
+\setbeamertemplate{bibliography item}[text] % [ref](http://tex.stackexchange.com/questions/68080/beamer-bibliography-icon)
+%\setbeamertemplate{footline}[frame number]{}
+
+%\setframeofframes{of}
+
+\usepackage{boxedminipage} %for: bvh border
+\def\fourgraphicswidth{0.35} %0.3\textwidth
+
+\usepackage{algorithm} %%format of the algorithm
+\usepackage{algpseudocode}
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{输入:}} %%Use Input in the format of Algorithm
+\renewcommand{\algorithmicensure}{\textbf{输出:}} %%UseOutput in the format of Algorithm
+%\algrenewcommand{\algorithmiccomment}[1]{\hskip3em $\rightarrow$ #1}
+\algrenewcommand{\algorithmiccomment}[1]{ $//$ #1}
+
+\usepackage{listings}
+\renewcommand\lstlistingname{代码}
+\renewcommand\lstlistlistingname{代码}
+
+\lstset{framexleftmargin=1.4em,
+        xleftmargin=1.8em,
+        basicstyle=\ttfamily\small,
+        %frame=shadowbox, numberstyle=\tiny, breaklines=true,
+        frame=single,
+        numberstyle=\tiny, breaklines=true,
+        keywordstyle=\color{blue!70}\bfseries,
+        %commentstyle=\color{red!50!green!50!blue!50},
+        rulesepcolor=\color{red!20!green!20!blue!20},
+        numbers=none,fontadjust=true}
+\lstdefinelanguage{shader}{morekeywords={uniform, layout, uniform, vec2, vec3, vec4, in, out, gl_Position, dot, flat, int ,float, gl_VertexID, xyz, w, x, y, z, location, version, sampler2DRect, bgr, gl_FragData, texture2DRect, gl_TexCoord,for,xy},morecomment=[l]{//}}
+
+
+%\setbeameroption{show notes} %un-comment to see the notes
+
+%\usepackage{pgfpages}
+%\renewcommand\pgfsetupphysicalpagesizes{%
+%    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+%}
+%\setbeameroption{show notes on second screen}
+
+\begin{document}
+
+\setbeamerfont{footnote}{size=\tiny}
+\setbeamerfont{caption}{size=\scriptsize}
+\setbeamertemplate{caption}[numbered]
+\setbeamerfont{subsection in toc}{size=\footnotesize}
+\renewcommand*{\bibfont}{\footnotesize}
+
+\graphicspath{{figures/}}
+
+\title[多\ 视\ 图\ 聚\ 类]{多\ 视\ 图\ 聚\ 类}\vspace{-30pt}
+\author[王\ 思\ 为]{王\ 思\ 为\\
+                    [0.5em]Email:~\href{mailto:wangsiwei13@nudt.edu.cn}{\color{blue!70}\texttt{wangsiwei13@nudt.edu.cn}}\\
+                     [0.5em]Github:{\color{blue!70}\texttt{https://github.com/wangsiwei2010}}
+                    }
+\institute[计算科学系]{\textcolor[rgb]{0.85,0.42,0.00}{国\ 防\ 科\ 学\ 技\ 术\ 大\ 学\qquad \  计\ 算\ 机\ 学\ 院\\
+计\ 算\ 科\ 学\ 系}}\vspace{-10pt}
+\date{\today}
+\frame{\titlepage}
+
+
+\section*{目录}
+\frame {
+\frametitle{\secname}
+% \begin{multicols}{2}
+\tableofcontents[sections={<1-5>}]
+%\end{multicols}
+}
+
+\AtBeginSubsection[] {
+\frame<handout:0> {
+\frametitle{目录}
+\tableofcontents[current,currentsubsection,sections={<1-5>}]
+}
+\addtocounter{framenumber}{-1}  %目录页不计算页码
+}
+
+\include{tl_10intro}
+\include{tl_20class}
+%\include{tl_30highlight}
+%\include{tl_31da}
+%\include{tl_32deep}
+%\include{tl_33ms}
+\include{tl_40stuff}
+
+\end{document}

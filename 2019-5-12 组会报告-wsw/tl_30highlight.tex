@@ -1,0 +1,62 @@
+%%%%%%%%%%%%%%%%%%
+\section{无人机竞赛}
+
+\begin{frame}
+    \frametitle{无人机目标检测竞赛}
+    \begin{itemize}
+        \item 在已有的无人机云台上，需要我们去建立算法来实现目标检测
+        \item one-stage和two-stage的目标检测算法的迁移
+        \item 空军的迫切需求
+        \item 学术转到工程上的考虑：实际需求
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{缺失k-means聚类}
+    \begin{itemize}
+        \item 首届空军主办的无人机挑战赛，在西安举办
+    \end{itemize} 
+    \begin{figure}
+        \includegraphics[width=0.9\textwidth]{12.jpg} 
+    \end{figure}          
+\end{frame}
+
+\begin{frame}
+    \frametitle{无人机目标检测竞赛}
+    \begin{itemize}
+        \item 现有的识别方法基于传统的CV算法，如hough圆变换等等，但是会有很多不确定因素
+        \item 比如目标是红色，但是不同的天气下红色在图像中的像素不一样，会导致错检甚至于无法识别
+        \item 深度学习的方法是可以来处理这些变化的，基于纹理特征
+        \item 此次采用的是retinanet来处理
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{无人机目标检测竞赛}
+    \begin{itemize}
+        \item 首届空军主办的无人机挑战赛，在西安举办
+    \end{itemize} 
+    \begin{figure}
+        \includegraphics[width=0.9\textwidth]{13.jpg} 
+    \end{figure}          
+\end{frame}
+
+\begin{frame}
+    \frametitle{无人机目标检测竞赛}
+    \begin{itemize}
+        \item 首届空军主办的无人机挑战赛，在西安举办
+    \end{itemize} 
+    \begin{figure}
+        \includegraphics[width=0.4\textwidth]{14.jpg} 
+    \end{figure}          
+\end{frame}
+
+\begin{frame}
+    \frametitle{比赛不足}
+    \begin{itemize}
+        \item 训练不够充分，设备未准备好
+        \item 图传性能不好，传回的图片质量较差
+        \item 无人机的高度不固定的时候，目标的尺度不一，而此次比赛就缺少对于小样本的注意力
+        \item 机载和工作站的区别
+    \end{itemize}
+\end{frame}
